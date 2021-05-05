@@ -1,0 +1,88 @@
+div.calendar {
+  position: relative;
+  width: 40vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  .calendar-toggle {
+    font-family: FontAwesome;
+
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    color: $accent;
+    background-color: $acc-pale;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    width: 10em;
+    transition: background-color 300ms, color 300ms;
+
+    &.has-input {
+      border: 2px solid $accent;
+    }
+
+    > div {
+      font-family: "Open Sans", arial, sans-serif;
+      font-size: 0.8em;
+      font-weight: 500;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover,
+    &.open {
+      background-color: $accent;
+      color: $acc-pale;
+      cursor: pointer;
+    }
+  }
+
+  .react-calendar {
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    bottom: 5em;
+    border-radius: 0.5em;
+    border: none;
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.15);
+    color: $accent;
+
+    .react-calendar__tile--active {
+      background-color: $accent;
+      border-radius: 3em;
+      color: white;
+    }
+
+    .react-calendar__month-view__days__day--weekend {
+      color: $acc-light;
+    }
+
+    .react-calendar__navigation button {
+      border-radius: 0.5em;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $acc-pale;
+      }
+    }
+
+    .react-calendar__month-view__days__day--neighboringMonth {
+      color: rgba($acc-light, 0.5);
+    }
+
+    .react-calendar__tile:enabled:hover,
+    .react-calendar__tile:enabled:focus {
+      background-color: $acc-pale;
+      border-radius: 3em;
+      color: $accent;
+    }
+
+    &.open {
+      display: block;
+    }
+  }
+}

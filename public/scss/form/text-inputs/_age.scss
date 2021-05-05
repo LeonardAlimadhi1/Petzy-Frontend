@@ -1,0 +1,19 @@
+div.age {
+  > div {
+    border-radius: $size / 5;
+
+    > div {
+      &::before {
+        height: $size / 2;
+        top: -$icon-width;
+        right: $size * 2 / 3.5;
+      }
+
+      &::after {
+        height: $size / 2;
+        top: -$icon-width;
+        right: $size / 3.8;
+      }
+    }
+  }
+}

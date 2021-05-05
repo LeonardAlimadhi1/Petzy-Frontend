@@ -1,0 +1,260 @@
+$animation-duration: 0.3s;
+
+> .buttons {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 0 10%;
+  min-height: 15vmin;
+  position: relative;
+
+  @media screen and (max-width: $bp1) {
+    padding: 3%;
+    padding-top: 4em;
+  }
+
+  div.progress-paws {
+    flex: 1;
+    margin: 0 3vw;
+    display: flex;
+    height: 3em;
+    border-radius: 0.5em;
+    background-color: $acc-pale;
+    transition: width 500ms;
+
+    @media screen and (max-width: $bp1) {
+      position: absolute;
+      width: 100%;
+      top: -4em;
+      margin: 0;
+    }
+
+    > div {
+      border-radius: 0.5em;
+      background-color: $third;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      transition: width 500ms;
+      position: relative;
+
+      > span {
+        position: absolute;
+        right: 0.7em;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3000;
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        // color: $accent;
+        color: white;
+        text-shadow: 0.5px 1px 5px $accent;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        transition: right 400ms, color 200ms, text-shadow 200ms;
+
+        &.initial {
+          right: -2.5em;
+          color: $acc-light;
+          text-shadow: none;
+        }
+      }
+    }
+  }
+
+  > div.progress-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex: 1;
+    width: 100%;
+
+    > button {
+      position: relative;
+      width: 10em;
+      text-align: right;
+
+      padding: 0.5em 1em 0.5em 2.5em;
+
+      background-color: $acc-pale;
+
+      border: 2px solid $acc-light;
+      border-radius: 5px;
+
+      font-family: inherit;
+      font-size: 1.1em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: $acc-light;
+      text-transform: uppercase;
+
+      transition: transform 120ms, border-color 200ms, color 200ms;
+
+      &:disabled {
+        border-color: rgba($acc-light, 0.5);
+        color: rgba($acc-light, 0.5);
+
+        &::before {
+          border-color: rgba($acc-light, 0.5);
+        }
+
+        &::after {
+          background-color: rgba($acc-light, 0.5);
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0.7em;
+        height: 0.7em;
+        border: 2px solid $acc-light;
+        border-bottom-width: 0;
+        border-right-width: 0;
+        transition: border-color 2000ms;
+
+        left: 1em;
+        top: 50%;
+        transform: translate(0, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0.8em;
+        height: 2px;
+        background-color: $acc-light;
+        transition: background-color 200ms;
+
+        left: 1em;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+
+      &.next {
+        text-align: left;
+        padding-left: 1em;
+        padding-right: 2.5em;
+
+        &::before {
+          left: auto;
+          right: 1em;
+          transform: translate(0, -50%) rotate(135deg);
+        }
+
+        &::after {
+          left: auto;
+          right: 1em;
+          transform: translate(0, -50%);
+        }
+
+        &.last {
+          animation: dissapear $animation-duration;
+          width: 0;
+          opacity: 0;
+        }
+      }
+
+      &:enabled:hover {
+        transform: scale(1.05);
+        border-color: $accent;
+        color: $accent;
+
+        &::before {
+          border-color: $accent;
+        }
+
+        &::after {
+          background-color: $accent;
+        }
+      }
+
+      &:enabled:active {
+        transform: scale(1);
+      }
+
+      &:enabled.previous.clicked {
+        &::before {
+          animation-name: prev-arrow;
+          animation-duration: $animation-duration;
+        }
+
+        &::after {
+          animation-name: prev-arrow-tail;
+          animation-duration: $animation-duration;
+        }
+      }
+
+      &:enabled.next.clicked {
+        &::before {
+          animation-name: next-arrow;
+          animation-duration: $animation-duration;
+        }
+
+        &::after {
+          animation-name: next-arrow-tail;
+          animation-duration: $animation-duration;
+        }
+      }
+
+      @keyframes dissapear {
+        from {
+          width: 10em;
+          padding: 0.5em 1em 0.5em 2.5em;
+          opacity: 1;
+        }
+        to {
+          width: 0;
+          padding: 0.5 0;
+          opacity: 0;
+        }
+      }
+
+      @keyframes prev-arrow {
+        from {
+          transform: translate(0, -50%) rotate(-45deg) rotateZ(0);
+        }
+        to {
+          transform: translate(0, -50%) rotate(-45deg) rotateZ(360deg);
+        }
+      }
+
+      @keyframes prev-arrow-tail {
+        from {
+          transform: translate(0, -50%) rotateZ(0);
+        }
+        to {
+          transform: translate(0, -50%) rotateZ(360deg);
+        }
+      }
+
+      @keyframes next-arrow {
+        from {
+          transform: translate(0, -50%) rotate(135deg) rotateZ(0);
+        }
+        to {
+          transform: translate(0, -50%) rotate(135deg) rotateZ(360deg);
+        }
+      }
+
+      @keyframes next-arrow-tail {
+        from {
+          transform: translate(0, -50%) rotateZ(0);
+        }
+        to {
+          transform: translate(0, -50%) rotateZ(360deg);
+        }
+      }
+
+      outline: none;
+      user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+    }
+  }
+}

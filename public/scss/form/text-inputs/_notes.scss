@@ -1,0 +1,34 @@
+div.notes {
+	width: 40%;
+
+	> textarea {
+		min-height: 10em;
+		resize: none;
+	}
+
+	> div {
+		top: $size + $padding;
+		width: $size * 1.1;
+		height: $size * 1.1;
+		border-radius: $size / 7;
+		transform: translate(-40%, -50%);
+
+		> div {
+			width: $size * 1.2;
+
+			&::before {
+				height: $size / 3;
+				top: $size / 2;
+				right: $size/ 1.5;
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				height: $size / 1.5;
+				top: $icon-width * 1.5;
+				right: $icon-width * 2.5;
+				transform: translate(-50%, 0) rotate(45deg);
+			}
+		}
+	}
+}

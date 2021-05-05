@@ -1,0 +1,1006 @@
+div.nav-header {
+  position: fixed;
+  top: 0;
+  z-index: 500;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 7em;
+  padding: 0 3em;
+  background-color: transparent;
+  transition: height 200ms; }
+  div.nav-header.scrolled {
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+    background-color: rgba(255,255,255,.8);
+  height: 7em; color:#1b1d1f; }
+    div.nav-header.scrolled div:first-of-type > a {
+      color: #317efa; 
+    }
+      div.nav-header.scrolled div:first-of-type > a:first-of-type {
+        transform: scale(1); }
+    div.nav-header.scrolled div:last-child > a {
+      color: #317efa; }
+      div.nav-header.scrolled div:last-child > a.menu-toggle::before {
+        background-color: #317efa; }
+      div.nav-header.scrolled div:last-child > a.menu-toggle::after {
+        border-color: #317efa; }
+  div.nav-header a {
+    transition: opacity 500ms; }
+    div.nav-header a:hover {
+      opacity: 0.7; }
+  div.nav-header > a.logo {
+    height: 100%;
+    padding: 0.6em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    div.nav-header > a.logo > img {
+      height: 140%;
+      width: unset;
+    max-width: unset!important; }
+  div.nav-header > div:first-of-type {
+    position: absolute;
+    left: 53%;
+    height: 100%;
+    /* transform: translateX(-50%); */
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center; }
+    div.nav-header > div:first-of-type > a:not(:last-of-type) {
+      margin-right: 3vw; }
+    div.nav-header > div:first-of-type > a {
+      white-space: nowrap;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: whitesmoke;
+      text-transform: uppercase;
+      font-size: 1.1em;
+      font-weight: 500;
+      letter-spacing: 1.2px; }
+      div.nav-header > div:first-of-type > a.try {
+        height: auto;
+        color: #1b1d1f;
+        transform: scale(1.3);
+        padding: 0.4em 2em;
+        border-radius: 3em;
+        background-color: #44ffd1;
+        transition: transform 200ms, opacity 200ms; }
+    @media screen and (max-width: 912px) {
+      div.nav-header > div:first-of-type {
+        top: 7em;
+        height: auto;
+        width: 90%;
+        border-radius: 0.5em;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: white;
+        flex-flow: column nowrap;
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.05);
+        height: 0;
+        opacity: 0;
+        transition: height 500ms, opacity 500ms;
+        pointer-events: none; }
+        div.nav-header > div:first-of-type > a.try {
+          height: unset;
+          color: #1b1d1f;
+          padding: 0.4em 2em;
+          border-radius: unset;
+          background-color: #44ffd1;
+          transition: transform 200ms, opacity 200ms; }
+        div.nav-header > div:first-of-type > a:not(:last-of-type) {
+          margin-right: 0;
+          border-bottom: 1px solid #edf3fb; 
+        }
+        div.nav-header > div:first-of-type > a {
+          transform: scaleY(0);
+          padding: 0 2em;
+          color: #317efa;
+          width: 100%;
+          flex: 1;
+          transition: transform 300ms; }
+        div.nav-header > div:first-of-type.open {
+          pointer-events: all;
+          height: 20em;
+          opacity: 1; }
+          div.nav-header > div:first-of-type.open > a {
+            transform: scaleY(1)!important; } }
+  div.nav-header > div:last-child {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center; }
+    div.nav-header > div:last-child > a:not(:last-of-type) {
+      margin-right: 2.5em; }
+    div.nav-header > div:last-child > a {
+      cursor: pointer;
+      text-decoration: none;
+      color: whitesmoke;
+      text-transform: uppercase;
+      font-size: 1.1em;
+      font-weight: 500; }
+    div.nav-header > div:last-child > a.menu-toggle {
+      display: none;
+      width: 1.2em;
+      height: 1em;
+      position: relative;
+      flex-flow: column nowrap;
+      justify-content: space-between; }
+      div.nav-header > div:last-child > a.menu-toggle::before, div.nav-header > div:last-child > a.menu-toggle::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: white; }
+      div.nav-header > div:last-child > a.menu-toggle::after {
+        height: 50%;
+        transform: translateY(-1px);
+        background-color: transparent;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white; }
+      div.nav-header > div:last-child > a.menu-toggle > i {
+        pointer-events: none; }
+        div.nav-header > div:last-child > a.menu-toggle > i::before {
+          pointer-events: none; }
+  @media screen and (max-width: 912px) {
+    div.nav-header {
+      padding: 0 1em; }
+      div.nav-header > div:last-child > a.menu-toggle {
+        display: flex; position:absolute; top:-10px; right:25px;
+       } }
+
+.form-root {
+  flex: 1;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap; }
+  .form-root > .container {
+    padding: 0;
+    width: 1300vw;
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: transform 900ms cubic-bezier(0.645, 0.045, 0.355, 1); }
+    .form-root > .container > .section {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      padding-top:50px;
+      overflow: hidden;
+      /* min-height:58vh;  */
+    }
+      .form-root > .container > .section.current h1 {
+        transform: translateX(0); }
+      .form-root > .container > .section h1 {
+        margin-top: -1em;
+        transform: translateX(200px);
+        font-weight: 700;
+        font-size: 7vmin;
+        margin-bottom: 0.2em;
+        color: #1b1d1f;
+        max-width: 70vw;
+        text-align: center;
+        line-height: 1em;
+        transition: transform 500ms;
+        transition-delay: 300ms; }
+        @media screen and (max-width: 912px) {
+          .form-root > .container > .section h1 {
+            max-width: 90vw;
+            transform: translateX(80px); } }
+      .form-root > .container > .section > div + div:not(.input) {
+        margin-top: 1em; }
+      .form-root > .container > .section > .desc {
+        /* color: #659df6; */
+        font-size: 1.25em;
+        font-weight: 500;
+        margin-bottom: 0.5em;
+        width: 90%;
+        text-align: center; }
+        .form-root > .container > .section > .desc > span {
+          color: #0455D5;
+          /* color: #317efa; */
+          font-weight: 600;
+        }  
+
+      .form-root > .container > .section > .error {
+        width: 100%;
+        text-align: center;
+        color: #f10e34;
+        font-size: 1.3em;
+        font-weight: 500;
+        margin:0 0 20px 0;
+       }
+      .form-root > .container > .section > .finish-button {
+        text-decoration: none;
+        background-color: #44ffd1;
+        font-size: 1.5em;
+        padding: 0.5em 1.3em;
+        color: #1b1d1f;
+        font-weight: 600;
+        border-radius: 1.5em;
+        position: relative;
+        transition: 300ms;
+        margin-bottom: 1em;
+        margin-top: .85em;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none; }
+        .form-root > .container > .section > .finish-button::before {
+          content: "";
+          width: 0.5em;
+          height: 1em;
+          right: 0;
+          top: 50%;
+          position: absolute;
+          border: 5px solid transparent;
+          border-top-width: 0;
+          border-left-width: 0;
+          transition: 300ms;
+          transform: translateY(-50%); }
+        .form-root > .container > .section > .finish-button:hover {
+          cursor: pointer;
+          padding-right: 3em;
+          background-color: rgba(68, 255, 209, 0.7) }
+          .form-root > .container > .section > .finish-button:hover::before {
+            right: 1.4em;
+            border-color: #1b1d1f;
+            transform: translateY(-50%) rotate(405deg) translateY(-0.2em); }
+        .form-root > .container > .section > .finish-button:active {
+          background-color: rgba(68, 255, 209, 0.8) ;
+          transform: scale(0.95); }
+          .form-root > .container > .section > .finish-button:active::before {
+            transform: translateY(-50%) rotate(405deg) translateY(-0.2em) scale(1.2); }
+        @media screen and (max-width: 912px) {
+          .form-root > .container > .section > .finish-button {
+            font-size: 1.4em; } }
+      .form-root > .container > .section div.input {
+        position: relative;
+        min-width: 40%;
+        margin-top: 2em;
+        transform: translateX(200px);
+        transition: transform 500ms;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center; }
+        .form-root > .container > .section div.input > span {
+          position: absolute;
+          bottom: 105%;
+          color: #1b1d1f;
+          font-size: 1em;
+          font-weight: 500; }
+        @media screen and (max-width: 912px) {
+          .form-root > .container > .section div.input {
+            transform: translateX(5%);
+            min-width: 90%; } }
+        .form-root > .container > .section div.input.current {
+          transform: translateX(0); }
+        .form-root > .container > .section div.input > div {
+          background: none;
+          position: absolute;
+          border: 2px solid rgba(27, 29, 31, 1);
+          transition: 500ms;
+          pointer-events: none;
+          right: 1em;
+          top: 50%;
+          width: 1.2em;
+          height: 1.2em;
+          transform: translate(-40%, -50%); }
+          .form-root > .container > .section div.input > div > div {
+            pointer-events: all;
+            position: absolute;
+            transition: 500ms;
+            top: -2px;
+            right: -2px;
+            width: 1.2em;
+            height: 1.2em; }
+            .form-root > .container > .section div.input > div > div:hover  {
+              color: #1b1d15;
+             }
+            .form-root > .container > .section div.input > div > div::before, .form-root > .container > .section div.input > div > div::after {
+              content: "";
+              position: absolute;
+              background-color: #1b1d15;
+              width: 2px;
+              transition: 500ms; }
+          .form-root > .container > .section div.input > div.focused {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.6em;
+            /* border-color: #44ffd1; */
+            top: 0;
+            right: 0;
+            transform: translate(0); }
+            .form-root > .container > .section div.input > div.focused > div {
+              width: 1.44em;
+              height: 1.44em;
+              right: 1em;
+              border-radius: 1.2em;
+              top: 50%;
+              transform: translate(0, -50%); }
+              .form-root > .container > .section div.input > div.focused > div:hover {
+                cursor: pointer;
+                background-color: #1b1d15; }
+                .form-root > .container > .section div.input > div.focused > div:hover::before {
+                  background-color: white; }
+                .form-root > .container > .section div.input > div.focused > div:hover::after {
+                  background-color: white; }
+              .form-root > .container > .section div.input > div.focused > div::before, .form-root > .container > .section div.input > div.focused > div::after {
+                border-radius: 0;
+                background-color: #1b1d15;
+                top: 50%;
+                right: 50%;
+                transform: translate(50%, -50%) rotate(45deg);
+                height: 0.96em; }
+              .form-root > .container > .section div.input > div.focused > div::after {
+                transform: translate(50%, -50%) rotate(-45deg); }
+        .form-root > .container > .section div.input > input,
+        .form-root > .container > .section div.input textarea {
+          width: 100%;
+          height: 100%;
+          font-size: 1.2em;
+          /* background: rgba(27, 29, 31, 0.8); */
+          /* background: rgba(68, 255, 209, 0.2); */
+          padding: 1em;
+          padding-right: 3.2em;
+          border: 2px solid rgba(27, 29, 31, 0.6);
+          border-radius: 0.6em;
+          outline: none;
+          transition: border-color 300ms;
+          font-family: inherit;
+          font-weight: 500;
+          color: #1b1d1f; }
+          .form-root > .container > .section div.input > input::placeholder,
+          .form-root > .container > .section div.input textarea::placeholder {
+            color: #1b1d1f;
+            font-weight: 400; }
+          .form-root > .container > .section div.input > input:disabled,
+          .form-root > .container > .section div.input textarea:disabled {
+            color: rgba(27, 29, 31,0.6) }
+          .form-root > .container > .section div.input > input:enabled:hover,
+          .form-root > .container > .section div.input textarea:enabled:hover {
+            border-color: rgba(27, 29, 31, 1) }
+      .form-root > .container > .section div.breed > div {
+        border-radius: 0.6em;
+        transform: translate(-40%, -55%); }
+        .form-root > .container > .section div.breed > div > div {
+          transform: rotate(-45deg);
+          width: 1.2em;
+          height: 1.2em; }
+          .form-root > .container > .section div.breed > div > div::before {
+            top: 0.24em;
+            right: 50%;
+            transform: translate(50%) rotate(90deg);
+            height: 0.4em;
+            border-top-left-radius: 1.2em;
+            border-bottom-left-radius: 1.2em; }
+          .form-root > .container > .section div.breed > div > div::after {
+            top: 1.2em;
+            right: 50%;
+            transform: translate(50%);
+            height: 0.4em; }
+      .form-root > .container > .section div.breed input:focus + div > div {
+        transform: translate(0, -50%) rotate(0); }
+      .form-root > .container > .section div.email > div {
+        top: 50%;
+        width: 1.44em;
+        height: 1.2em;
+        border-radius: 0.24em;
+        transform: translate(-40%, -50%); }
+        .form-root > .container > .section div.email > div > div {
+          width: 1.44em; }
+          .form-root > .container > .section div.email > div > div::after {
+            height: 0.77419em;
+            top: -2px;
+            transform: rotate(-60deg) translate(0, 50%); }
+          .form-root > .container > .section div.email > div > div::before {
+            height: 0.75em;
+            top: -2px;
+            right: 0;
+            transform: rotate(60deg) translate(0, 50%); }
+      .form-root > .container > .section div.name > div {
+        top: 50%;
+        width: 1.44em;
+        height: 1.2em;
+        border-radius: 0.24em;
+        transform: translate(-40%, -50%); }
+        .form-root > .container > .section div.name > div > div {
+          width: 1.44em; }
+          .form-root > .container > .section div.name > div > div::before {
+            height: 0.6em;
+            top: 2px;
+            right: 1.32em;
+            transform: rotate(90deg) translate(0%, -50%); }
+          .form-root > .container > .section div.name > div > div::after {
+            height: 1em;
+            top: 4px;
+            right: 0;
+            transform: rotate(90deg) translate(0%, 50%); }
+      .form-root > .container > .section div.age > div {
+        border-radius: 0.24em; }
+        .form-root > .container > .section div.age > div > div::before {
+          height: 0.6em;
+          top: -2px;
+          right: 0.68571em; }
+        .form-root > .container > .section div.age > div > div::after {
+          height: 0.6em;
+          top: -2px;
+          right: 0.31579em; }
+      .form-root > .container > .section div.weight > div {
+        border-radius: 0.24em; }
+        .form-root > .container > .section div.weight > div > div::before {
+          height: 0.6em;
+          top: 4px;
+          right: 0.54545em;
+          transform: rotate(90deg);
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px; }
+        .form-root > .container > .section div.weight > div > div::after {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          height: 0.3em;
+          top: 4.2px;
+          right: 0.44444em;
+          transform: rotate(40deg); }
+      .form-root > .container > .section div.notes {
+        width: 40%; }
+        .form-root > .container > .section div.notes > textarea {
+          min-height: 10em;
+          resize: none; }
+        .form-root > .container > .section div.notes > div {
+          top: 2.2em;
+          width: 1.32em;
+          height: 1.32em;
+          border-radius: 0.17143em;
+          transform: translate(-40%, -50%); }
+          .form-root > .container > .section div.notes > div > div {
+            width: 1.44em; }
+            .form-root > .container > .section div.notes > div > div::before {
+              height: 0.4em;
+              top: 0.6em;
+              right: 0.8em;
+              transform: rotate(-45deg); }
+            .form-root > .container > .section div.notes > div > div::after {
+              height: 0.8em;
+              top: 3px;
+              right: 5px;
+              transform: translate(-50%, 0) rotate(45deg); }
+      .form-root > .container > .section div.calendar {
+        position: relative;
+        width: 40vw;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center; }
+        .form-root > .container > .section div.calendar .calendar-toggle {
+          font-family: 'Open Sans', FontAwesome;
+          font-size: 1.5em;
+          display: flex;
+          justify-content: center;
+          color: #1b1d1f;
+          background-color: rgba(68, 255, 209, 0.2);;
+          border-radius: 0.5em;
+          padding: 0.5em;
+          width: 10em;
+          transition: background-color 300ms, color 300ms; }
+          .form-root > .container > .section div.calendar .calendar-toggle.has-input {
+            border: 2px solid #44ffd1; }
+          .form-root > .container > .section div.calendar .calendar-toggle > div {
+            font-family: "Open Sans", arial, sans-serif;
+            font-size: 0.8em;
+            font-weight: 500;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+          .form-root > .container > .section div.calendar .calendar-toggle:hover, .form-root > .container > .section div.calendar .calendar-toggle.open {
+            background-color: #44ffd1;
+            color: #edf3fb;
+            cursor: pointer; }
+        .form-root > .container > .section div.calendar .react-calendar {
+          overflow: hidden;
+          display: none;
+          position: absolute;
+          bottom: 2.5em;
+          border-radius: 0.5em;
+          border: none;
+          box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.15);
+          color: #1b1d1f; }
+          .form-root > .container > .section div.calendar .react-calendar .react-calendar__tile--active {
+            background-color: #44ffd1;
+            border-radius: 3em;
+            color: white; }
+          .form-root > .container > .section div.calendar .react-calendar .react-calendar__month-view__days__day--weekend {
+            color: #1b1d1f; }
+          .form-root > .container > .section div.calendar .react-calendar .react-calendar__navigation button {
+            border-radius: 0.5em; }
+            .form-root > .container > .section div.calendar .react-calendar .react-calendar__navigation button:hover, .form-root > .container > .section div.calendar .react-calendar .react-calendar__navigation button:active, .form-root > .container > .section div.calendar .react-calendar .react-calendar__navigation button:focus {
+              background-color: rgba(49,126,250, 0.2); }
+          .form-root > .container > .section div.calendar .react-calendar .react-calendar__month-view__days__day--neighboringMonth {
+            color: #317efa }
+          .form-root > .container > .section div.calendar .react-calendar .react-calendar__tile:enabled:hover,
+          .form-root > .container > .section div.calendar .react-calendar .react-calendar__tile:enabled:focus {
+            background-color: rgba(49,126,250, 0.2);
+            border-radius: 3em;
+            color: #1b1d1f; }
+          .form-root > .container > .section div.calendar .react-calendar.open {
+            display: block; }
+      .form-root > .container > .section .radio-input {
+        display: flex;
+        flex-flow: column nowrap;
+        transform: translateX(200px);
+        transition: transform 500ms;
+        position: relative;
+        box-sizing: border-box; }
+        @media screen and (max-width: 912px) {
+          .form-root > .container > .section .radio-input {
+            transform: translateX(80px); } }
+        .form-root > .container > .section .radio-input.current {
+          transform: translateX(0); }
+        .form-root > .container > .section .radio-input > .selector {
+          position: absolute;
+          top: 0;
+          border: 2px solid rgba(27, 29, 31, 1);
+          border-radius: 5px;
+          height: 3.5em;
+          width: 11.7em;
+          background: transparent;
+          transition: left 300ms, transform 200ms; }
+          @media screen and (max-width: 912px) {
+            .form-root > .container > .section .radio-input > .selector {
+              display: none; } }
+        .form-root > .container > .section .radio-input > .options {
+          width: 100%;
+          height: 3.5em;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center; }
+          .form-root > .container > .section .radio-input > .options > div.option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            background-color: transparent;
+            border: 2px solid rgba(27, 29, 31, 0.6);
+            border-radius: 5px;
+            font-size: 1.3em;
+            color: #1b1d1f;
+            text-align: center;
+            width: 9em;
+            transition: transform 200ms, color 300ms, border-color 300ms; }
+            .form-root > .container > .section .radio-input > .options > div.option:not(:last-child) {
+              margin-right: 1em; }
+            .form-root > .container > .section .radio-input > .options > div.option:not(.selected):hover {
+              color: #1b1d1f;
+              transform: scale(1.05);
+              border-color: rgba(27, 29, 31, 1); }
+            .form-root > .container > .section .radio-input > .options > div.option:active {
+              transform: scale(1); }
+            @media screen and (max-width: 912px) {
+              .form-root > .container > .section .radio-input > .options > div.option {
+                font-size: 1em; } }
+            .form-root > .container > .section .radio-input > .options > div.option.selected {
+              font-weight: 600;
+              color: #1b1d1f; }
+              @media screen and (max-width: 912px) {
+                .form-root > .container > .section .radio-input > .options > div.option.selected {
+                  border: 2px solid #1b1d1f; } }
+        .form-root > .container > .section .radio-input > .indicator {
+          position: absolute;
+          top: 4em;
+          transform: translate(-50%, 0) translate(5.9em, 0);
+          width: 0;
+          height: 0;
+          border-bottom: 0.5em solid rgba(27, 29, 31, 1);
+          border-left: 0.5em solid transparent;
+          border-right: 0.5em solid transparent;
+          transition: left 300ms; }
+          @media screen and (max-width: 912px) {
+            .form-root > .container > .section .radio-input > .indicator {
+              display: none; } }
+        .form-root > .container > .section .radio-input > .descriptions {
+          width: 100%;
+          height: 10em;
+          overflow-x: hidden;
+          background-color: transparent;
+          border-radius: 0.5em;
+          position: relative;
+          margin-top: 1em;
+          border: 2px solid rgba(27, 29, 31, 1); }
+          .form-root > .container > .section .radio-input > .descriptions > div {
+            display: flex;
+            flex-flow: row nowrap;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: left 300ms; }
+            .form-root > .container > .section .radio-input > .descriptions > div > div {
+              color: #1b1d1f;
+              font-size: 1.3em;
+              font-weight: 400;
+              width: 25%;
+              height: 100%;
+              padding: 0.5em 1em; }
+              @media screen and (max-width: 912px) {
+                .form-root > .container > .section .radio-input > .descriptions > div > div {
+                  font-size: 1.1em; } }
+          @media screen and (max-width: 912px) {
+            .form-root > .container > .section .radio-input > .descriptions {
+              height: 14em; } }
+        @media screen and (max-width: 912px) {
+          .form-root > .container > .section .radio-input {
+            width: 90%; } }
+      .form-root > .container > .section .selector-input {
+        display: flex;
+        flex-flow: row wrap;
+        transform: translateX(200px);
+        transition: transform 500ms;
+        position: relative;
+        max-width: 100%; }
+        .form-root > .container > .section .selector-input.current {
+          transform: translateX(0); }
+        .form-root > .container > .section .selector-input > div.selector {
+          z-index: 1000;
+          height: 100%;
+          width: 13em;
+          border-radius: 5px;
+          border: 2px solid #1b1d1f;
+          background: transparent;
+          position: absolute;
+          top: 0;
+          transition: left 300ms; }
+          @media screen and (max-width: 912px) {
+            .form-root > .container > .section .selector-input > div.selector {
+              display: none; } }
+        .form-root > .container > .section .selector-input > div:not(.selector) {
+          user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          -webkit-user-select: none;
+          width: 13em;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1em;
+          background-color: transparent;
+          border: 2px solid rgba(27, 29, 31, 0.6);
+          border-radius: 5px;
+          transition: transform 200ms, color 300ms, border-color 300ms; }
+          .form-root > .container > .section .selector-input > div:not(.selector):not(:last-of-type) {
+            margin-right: 1em; }
+          @media screen and (max-width: 912px) {
+            .form-root > .container > .section .selector-input > div:not(.selector) {
+              height: 12em;
+              margin-bottom: 1em; }
+              .form-root > .container > .section .selector-input > div:not(.selector).selected {
+                border: 2px solid rgba(27, 29, 31, 1); } }
+          .form-root > .container > .section .selector-input > div:not(.selector) > span {
+            color: #1b1d1f;
+            margin-bottom: 1em;
+            font-size: 2vh;
+            transition: color 500ms; }
+          .form-root > .container > .section .selector-input > div:not(.selector):not(.selected):hover {
+            cursor: pointer;
+            color: #1b1d1f;
+            transform: scale(1.03);
+            border-color: rgba(27, 29, 31, 1); }
+            .form-root > .container > .section .selector-input > div:not(.selector):not(.selected):hover > img {
+              opacity: 0.7;
+              transform: scale(0.9); }
+            .form-root > .container > .section .selector-input > div:not(.selector):not(.selected):hover > span {
+              color: #1b1d1f; }
+          .form-root > .container > .section .selector-input > div:not(.selector):not(.selected):active {
+            transform: scale(1); }
+          .form-root > .container > .section .selector-input > div:not(.selector).selected {
+            font-weight: 600;
+            color: #1b1d1f; }
+            .form-root > .container > .section .selector-input > div:not(.selector).selected > img {
+              opacity: 1;
+              transform: scale(1); }
+            .form-root > .container > .section .selector-input > div:not(.selector).selected > span {
+              color: #1b1d1f; }
+          .form-root > .container > .section .selector-input > div:not(.selector) > img {
+            opacity: 0.5;
+            transform: scale(0.8);
+            width: 70%;
+            transition: opacity 300ms, transform 200ms; }
+        @media screen and (max-width: 912px) {
+          .form-root > .container > .section .selector-input {
+            transform: translateX(20px); }
+            .form-root > .container > .section .selector-input.five {
+              padding-left: 3%; }
+              .form-root > .container > .section .selector-input.five > div:not(.selector) {
+                width: 29.4%; }
+            .form-root > .container > .section .selector-input.four {
+              padding: 0 2%;
+              justify-content: space-between; }
+              .form-root > .container > .section .selector-input.four > div:not(.selector) {
+                width: 23%;
+                height: 9em; }
+                .form-root > .container > .section .selector-input.four > div:not(.selector):not(:last-child) {
+                  margin-right: 0; } }
+      .form-root > .container > .section div.editor {
+        display: flex;
+        flex-flow: row wrap;
+        width: 70%;
+        padding-left: 2%;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(200px);
+        transition: transform 500ms;
+        margin-top: 2em; }
+        .form-root > .container > .section div.editor.current {
+          transform: translateX(0); }
+        .form-root > .container > .section div.editor > button {
+          outline: none;
+          margin-right: 2%;
+          margin-bottom: 2%;
+          background-color: transparent;
+          border: 2px solid rgba(27, 29, 31, 0.6);
+          border-radius: 4px;
+          padding: 0.5em 1em;
+          color: #1b1d1f;
+          font-weight: 600;
+          transition: border-color 300ms, background-color 300ms, transform 300ms; }
+          .form-root > .container > .section div.editor > button > span {
+            color: #1b1d1f }
+          .form-root > .container > .section div.editor > button:hover {
+            border-color: rgba(27, 29, 31, 1);
+            background-color: transparent;
+          transform: scale(1.1);}
+          @media screen and (max-width: 912px) {
+            .form-root > .container > .section div.editor > button {
+              padding: 0.2em 0.8em;
+              font-size: 1em; } }
+        @media screen and (max-width: 912px) {
+          .form-root > .container > .section div.editor {
+            transform: translateX(60px);
+            width: 90%; } }
+  .form-root > .buttons {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 8%;
+    margin-bottom: 2%;
+    padding: 0 10%;
+    min-height: 15vmin;
+    position: relative; z-index:500; }
+    @media screen and (max-width: 912px) {
+      .form-root > .buttons {
+        padding: 3%;
+        padding-top: 4em; } }
+    .form-root > .buttons div.progress-paws {
+      flex: 1;
+      margin: 0 15vw;
+      display: flex;
+      height: 1em;
+      border-radius: 1.5em;
+      background-color: rgba(68, 255, 209, 0.1);
+      transition: width 500ms; }
+      @media screen and (max-width: 912px) {
+        .form-root > .buttons div.progress-paws {
+          position: absolute;
+          width: 100%;
+          top: 3em;
+          margin: 0; } }
+      .form-root > .buttons div.progress-paws > div {
+        border-radius: 1.5em;
+        background-color: #44ffd1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        transition: width 500ms;
+        position: relative; }
+        .form-root > .buttons div.progress-paws > div > span {
+          display: none;
+          position: absolute;
+          right: 0.7em;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 3000;
+          font-family: inherit;
+          font-weight: 600;
+          font-size: 1em;
+          letter-spacing: 1px;
+          /* color: white; */
+          color:#1b1d1f;
+          /* text-shadow: 0px 1px 5px #317efa; */
+          user-select: none;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          transition: right 400ms, color 200ms, text-shadow 200ms; }
+          .form-root > .buttons div.progress-paws > div > span.initial {
+            right: -2.5em;
+            color: #1b1d1f;
+            text-shadow: none; }
+    .form-root > .buttons > div.progress-buttons {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex: 1;
+      width: 100%;
+     }
+      .form-root > .buttons > div.progress-buttons > button {
+        position: relative;
+        width: 10em;
+        text-align: right;
+        padding: 0.5em 1em 0.5em 2.5em;
+        background-color: white;
+        border: 2px solid #1b1d1f;
+        border-radius: 50px;
+        font-family: inherit;
+        font-size: 1.1em;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: #1b1d1f;
+        text-transform: uppercase;
+        transition: transform 120ms, border-color 200ms, color 200ms;
+        outline: none;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none; }
+        .form-root > .buttons > div.progress-buttons > button:disabled {
+          border-color:  rgba(27, 29, 31, 0.2);
+          color: rgba(27, 29, 31,0.5); }
+          .form-root > .buttons > div.progress-buttons > button:disabled::before {
+            border-color: rgba(27, 29, 31,0.5); }
+          .form-root > .buttons > div.progress-buttons > button:disabled::after {
+            background-color: rgba(27, 29, 31,0.5); }
+        .form-root > .buttons > div.progress-buttons > button::before {
+          content: "";
+          position: absolute;
+          width: 0.7em;
+          height: 0.7em;
+          border: 2px solid #1b1d1f;
+          border-bottom-width: 0;
+          border-right-width: 0;
+          transition: border-color 2000ms;
+          left: 1em;
+          top: 50%;
+          transform: translate(0, -50%) rotate(-45deg); }
+        .form-root > .buttons > div.progress-buttons > button::after {
+          content: "";
+          position: absolute;
+          width: 0.8em;
+          height: 2px;
+          background-color: #1b1d1f;
+          transition: background-color 200ms;
+          left: 1em;
+          top: 50%;
+          transform: translate(0, -50%); }
+        .form-root > .buttons > div.progress-buttons > button.next {
+          border: 2px solid #44ffd1;
+          background-color: #44ffd1;
+          text-align: left;
+          padding-left: 1em;
+          padding-right: 2.5em; }
+          .form-root > .buttons > div.progress-buttons > button.next::before {
+            left: auto;
+            right: 1em;
+            transform: translate(0, -50%) rotate(135deg); }
+          .form-root > .buttons > div.progress-buttons > button.next::after {
+            left: auto;
+            right: 1em;
+            transform: translate(0, -50%); }
+          .form-root > .buttons > div.progress-buttons > button.next.last {
+            animation: dissapear 0.3s;
+            width: 0;
+            opacity: 0; }
+            .form-root > .buttons > div.progress-buttons > button.previous.last {
+              animation: dissapear 0.3s;
+              width: 0;
+              opacity: 0; }
+
+        .form-root > .buttons > div.progress-buttons > button:enabled:hover {
+          transform: scale(1.05);
+          /* background-color: #44ffd1; */
+          /* border-color: transparent; */
+          /* color: #1b1d1f;  */
+        }
+          .form-root > .buttons > div.progress-buttons > button:enabled:hover::before {
+            border-color: #1b1d1f; }
+          .form-root > .buttons > div.progress-buttons > button:enabled:hover::after {
+            background-color: #1b1d1f; }
+        .form-root > .buttons > div.progress-buttons > button:enabled:active {
+          transform: scale(1); }
+        .form-root > .buttons > div.progress-buttons > button:enabled.previous.clicked::before {
+          animation-name: prev-arrow;
+          animation-duration: 0.3s; }
+        .form-root > .buttons > div.progress-buttons > button:enabled.previous.clicked::after {
+          animation-name: prev-arrow-tail;
+          animation-duration: 0.3s; }
+        .form-root > .buttons > div.progress-buttons > button:enabled.next.clicked::before {
+          animation-name: next-arrow;
+          animation-duration: 0.3s; }
+        .form-root > .buttons > div.progress-buttons > button:enabled.next.clicked::after {
+          animation-name: next-arrow-tail;
+          animation-duration: 0.3s; }
+          .age-container{
+            display:flex;
+            justify-content: space-between;
+            max-width: 420px;
+          }
+          .age-container div {
+            width: 200px;
+          }
+          @media screen and (max-width: 912px) {
+            .age-container{
+              flex-direction: column;
+            }
+            .header-background{
+              height: 230px!important;
+            }
+          }
+
+          .buttons-down{
+            margin: 0 0 3% 0!important;
+            padding: 0 10% !important;
+            min-height:unset !important;
+            width: 100%;
+
+            /* position: absolute !important;
+            bottom: 0;
+            left: 0;
+            right: 0; */
+          }
+
+          .buttons-down > div {
+            justify-content: space-evenly !important;
+          }
+
+        /* .align-left-description{
+          text-align: left;
+        } */
+
+@keyframes dissapear {
+  from {
+    width: 10em;
+    padding: 0.5em 1em 0.5em 2.5em;
+    opacity: 1; }
+  to {
+    width: 0;
+    padding: 0.5 0;
+    opacity: 0; } }
+
+@keyframes prev-arrow {
+  from {
+    transform: translate(0, -50%) rotate(-45deg) rotateZ(0); }
+  to {
+    transform: translate(0, -50%) rotate(-45deg) rotateZ(360deg); } }
+
+@keyframes prev-arrow-tail {
+  from {
+    transform: translate(0, -50%) rotateZ(0); }
+  to {
+    transform: translate(0, -50%) rotateZ(360deg); } }
+
+@keyframes next-arrow {
+  from {
+    transform: translate(0, -50%) rotate(135deg) rotateZ(0); }
+  to {
+    transform: translate(0, -50%) rotate(135deg) rotateZ(360deg); } }
+
+@keyframes next-arrow-tail {
+  from {
+    transform: translate(0, -50%) rotateZ(0); }
+  to {
+    transform: translate(0, -50%) rotateZ(360deg); } }
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; }
+
+/* Webkit browsers like Safari and Chrome */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }

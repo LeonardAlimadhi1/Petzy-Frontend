@@ -1,0 +1,27 @@
+div.name {
+	> div {
+		top: 50%;
+		width: $size * 1.2;
+		height: $size;
+		border-radius: $size / 5;
+		transform: translate(-40%, -50%);
+
+		> div {
+			width: $size * 1.2;
+
+			&::before {
+				height: $size / 2;
+				top: $icon-width;
+				right: $size * 1.1;
+				transform: rotate(90deg) translate(0%, -50%);
+			}
+
+			&::after {
+				height: $size / 1.2;
+				top: $icon-width * 2;
+				right: 0;
+				transform: rotate(90deg) translate(0%, 50%);
+			}
+		}
+	}
+}

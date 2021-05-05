@@ -1,0 +1,32 @@
+div.breed {
+	> div {
+		border-radius: $size / 2;
+		transform: translate(-40%, -55%);
+
+		> div {
+			transform: rotate(-45deg);
+			width: $size;
+			height: $size;
+
+			&::before {
+				top: $size / 5;
+				right: 50%;
+				transform: translate(50%) rotate(90deg);
+				height: $size / 3;
+				border-top-left-radius: $size;
+				border-bottom-left-radius: $size;
+			}
+
+			&::after {
+				top: $size;
+				right: 50%;
+				transform: translate(50%);
+				height: $size / 3;
+			}
+		}
+	}
+
+	input:focus + div > div {
+		transform: translate(0, -50%) rotate(0);
+	}
+}

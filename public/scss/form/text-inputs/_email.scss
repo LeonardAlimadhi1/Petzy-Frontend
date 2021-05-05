@@ -1,0 +1,26 @@
+div.email {
+  > div {
+    top: 50%;
+    width: $size * 1.2;
+    height: $size;
+    border-radius: $size / 5;
+    transform: translate(-40%, -50%);
+
+    > div {
+      width: $size * 1.2;
+
+      &::after {
+        height: $size / 1.55;
+        top: -$icon-width;
+        transform: rotate(-60deg) translate(0, 50%);
+      }
+
+      &::before {
+        height: $size / 1.6;
+        top: -$icon-width;
+        right: 0;
+        transform: rotate(60deg) translate(0, 50%);
+      }
+    }
+  }
+}

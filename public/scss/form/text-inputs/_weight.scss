@@ -1,0 +1,25 @@
+div.weight {
+	> div {
+		border-radius: $size / 5;
+
+		> div {
+			&::before {
+				height: $size / 2;
+				top: $icon-width * 2;
+				right: $size / 2.2;
+				transform: rotate(90deg);
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px;
+			}
+
+			&::after {
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+				height: $size / 4;
+				top: $icon-width * 2.1;
+				right: $size / 2.7;
+				transform: rotate(40deg);
+			}
+		}
+	}
+}
